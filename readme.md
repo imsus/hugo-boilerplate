@@ -1,0 +1,1 @@
+# Hugo + Laravel Mix Boilerplate

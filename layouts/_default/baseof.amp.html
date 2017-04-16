@@ -1,0 +1,126 @@
+<!doctype html>
+  <html ⚡>
+    <head>
+      <meta charset="utf-8">
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <!-- ## Setup -->
+      <!--
+        All additionally used AMP components must be imported in the header.
+      -->
+      <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+      <!--<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>-->
+      <!--<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>-->
+      <script async custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>
+      <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+      <!--<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>-->
+      <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+      <!--<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>-->
+
+      <link rel="canonical" href="https://ampbyexample.com/samples_templates/news_article/">
+
+      <!-- ## Metadata -->
+      <!-- The Top Stories carousel requires schema.org markup for one of the following types: Article, NewsArticle, BlogPosting, or VideoObject. [Learn more](https://developers.google.com/structured-data/carousels/top-stories#markup_specification).  -->
+      <script type="application/ld+json">
+{
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": "https://ampbyexample.com/samples_templates/news_article/",
+      "headline": "Lorem Ipsum",
+      "datePublished": "2016-04-21T11:55:02Z",
+      "dateModified": "2016-04-21T11:55:02Z",
+      "description": "A sample news article build with AMP.",
+      "author": {
+        "@type": "Person",
+        "name": "Sebastian Benz"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "http://cdn.ampproject.org/logo.jpg",
+          "width": 600,
+          "height": 60
+        }
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://ampbyexample.com/img/landscape_lake_1280x857.jpg",
+        "height": 1280,
+        "width": 857
+      }
+    }
+      </script>
+      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <style amp-custom>main>div,main>figure>figcaption,main>h2,main>p{padding:1rem}figure{margin:1rem 0;padding:0}figure>figcaption{padding:.5rem 1rem}.amp-ad-container{display:flex}amp-ad{margin:0 auto}.carousel .slide>amp-img>img{object-fit:contain}.heading{padding-bottom:8px}.heading h1{font-size:3rem;line-height:3.5rem;margin-bottom:1rem}.heading>#summary{font-weight:500}.heading>small{color:#656565}.related{background-color:#f5f5f5;margin:1rem;display:flex;color:#111;padding:0;box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);text-decoration:none}.related>span{font-weight:400;margin:8px}.related:hover{background-color:#ccc}amp-user-notification{padding:8px;background:#bbb;text-align:center;color:#fff}</style>
+
+    </head>
+    <body>
+
+      <!-- -->
+      <main>
+      <div class="heading">
+        <h1>A sample AMP Article</h1>
+        <p id="summary">This is a sample article demonstrating how to write a news article in AMP. It demonstrates the usage of AMP components which works well in news articles. Examples include social sharing, image galleries, personalized content, ads, and more.</p>
+        <p><small>by Sebastian Benz</small></p>
+      </div>
+
+      <!-- ## Social Sharing  -->
+
+      <!-- The Social Share extension provides a common interface for share buttons.  Learn more about `amp-social-share` [here](/components/amp-social-share/).  -->
+      <p class="heading">
+        <amp-social-share type="twitter" width="45" height="33"></amp-social-share>
+        <amp-social-share type="facebook" width="45" height="33" data-attribution="254325784911610"></amp-social-share>
+        <amp-social-share type="gplus" width="45" height="33"></amp-social-share>
+        <amp-social-share type="email" width="45" height="33"></amp-social-share>
+        <amp-social-share type="pinterest" width="45" height="33"></amp-social-share>
+      </p>
+
+      <div>
+        {{ block "main" . }}
+        {{ end }}
+      </div>
+
+      <!-- ## Embedding related content -->
+      <!-- -->
+      <h2>Related Articles</h2>
+      <p>These articles might be interesting for you as well:</p>
+      <!-- It's a good idea to recommend related content to your readers. With `amp-list` it is possible to dynamically include personalized content into your AMPs. It's a good idea to link to the AMP version of related content in order to keep the user in the fast AMP world. Learn more about `amp-list` [here](/components/amp-list/) -->
+      <!--<amp-list width="300" height="75" layout="responsive" src="/json/related_articles.json">
+        <template type="amp-mustache">
+          <a class="card related" href="/{/{url/}/}"><amp-img width="101" height="75" src="/{/{thumbnail/}/}"></amp-img><span>/{/{title/}/}</span></a>
+        </template>
+      </amp-list>-->
+      </main>
+
+      <!-- ## Cookie Consent -->
+      <!-- Use `amp-user-notification` to implement a cookie consent form (if needed). By default, the AMP runtime doesn't use cookies. Some analytics vendors might use require cookies though. Learn more about `amp-user-notification` [here](/components/amp-user-notification/) -->
+      <amp-user-notification layout="nodisplay" id="amp-user-notification1">
+        This page might use cookies if your analytics vendor requires them.
+        <button on="tap:amp-user-notification1.dismiss">Accept</button>
+      </amp-user-notification>
+
+      <!-- ## User Analytics -->
+      <!-- Analytics must be configured in the body. Here we use Google Analytics to track pageviews.  -->
+      <amp-analytics type="googleanalytics">
+        <script type="application/json">
+        {
+          "vars": {
+            "account": "UA-73836974-1"
+          },
+          "triggers": {
+            "default pageview": {
+              "on": "visible",
+              "request": "pageview",
+              "vars": {
+                "title": "/{/{title/}/}"
+              }
+            }
+          }
+        }
+        </script>
+      </amp-analytics>
+
+    </body>
+  </html>

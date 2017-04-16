@@ -1,0 +1,30 @@
+baseURL:        "https://default.dev/"
+languageCode:   "en-us"
+title:          "My New Hugo Site"
+config:         "config.yml"
+metaDataFormat: "yaml"
+params:
+  Color: "#000000"
+menu:
+  main:
+    - Name:       "Home"
+      Weight:     10
+      Identifier: "home"
+      URL:        "/"
+    - Name:       "About"
+      Weight:     20
+      Identifier: "about"
+      URL:        "/about/"
+    - Name:       "Beginner"
+      Weight:     30
+      Identifier: "beginner"
+      URL:        "/beginner/"
+    - Name:       "Advanced"
+      Weight:     40
+      Identifier: "advanced"
+      URL:        "/advanced/"
+    - Name:       "Reference"
+      Weight:     50
+      Identifier: "reference"
+      URL:        "/reference/"
+

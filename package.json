@@ -1,0 +1,38 @@
+{
+  "name": "default",
+  "version": "1.0.0",
+  "description": "Hugo Boilerplate",
+  "main": "index.js",
+  "author": "Imam Susanto <abc.imams@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "laravel-mix": "^0.10.0",
+    "postcss-scss": "^0.4.1",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "sw-precache-webpack-plugin": "^0.9.1"
+  },
+  "dependencies": {
+    "autotrack": "^2.3.2",
+    "barba.js": "^1.0.0",
+    "tachyons": "^4.7.0"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  }
+}

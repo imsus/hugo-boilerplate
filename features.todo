@@ -1,0 +1,16 @@
+☐ Home
+    ☐ About
+    ☐ Github Repo
+    ☐ Beginner (Category)
+        ☐ Installation
+        ☐ Folder Structure
+        ☐ Development
+        ☐ Generating & Compiling Assets
+        ☐ Deployment
+    ☐ Advanced (Category)
+        ☐ AMP
+        ☐ PWA
+        ☐ API
+    ☐ Reference (Category)
+        ☐ YAML Data Type
+        ☐ TOML Data Type

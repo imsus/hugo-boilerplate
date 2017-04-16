@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <main>
+    <div class="mw8 center">
+      <div class="flex flex-wrap">
+        {{ range where .Data.Pages "Section" .Section }}
+          <div class="w-third">
+            <a class="db ma3 pa3 ba black bg-white no-underline hover-bg-dark-gray hover-white bw1 br2 h4 b--dark-gray" href="{{ .Permalink }}">
+              <h2 class="ma0 mb1 measure-narrow f4">{{ .Title }}</h2>
+              <time class="f6 code" datetime="{{ dateFormat "Monday, Jan 2, 2006" .Date }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
+            </a>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </main>
+{{ end }}
