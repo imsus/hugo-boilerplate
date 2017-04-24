@@ -1,0 +1,6 @@
+{{ range .Site.Menus.internal -}}
+  <a class="blue dib ph3 pv2 ma1" href="{{ .URL -}}">{{ .Name -}}</a>
+{{ end}}
+{{ range .Site.Menus.external -}}
+  <a class="blue dib ph3 pv2 ma1" href="{{ .URL -}}" target="_blank" rel="noopener">{{ .Name -}}</a>
+{{ end}}

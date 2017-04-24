@@ -1,0 +1,38 @@
+0.0.0.0 {
+    root public
+
+    # Authentication
+    basicauth /admin imsus bijikuda
+
+    # Plugin
+    hugo {
+        flag watch
+    }
+
+    # Errors
+    errors {
+        404 404.html
+    }
+
+    # Security
+    tls self_signed
+    header / {
+        # Strict-Transport-Security "max-age=31536000;"
+        X-XSS-Protection "1; mode=block"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+    }
+
+    # Performance
+    gzip
+    minify  {
+        if {path} not_match ^(\/js).*
+        if {path} not_match ^(\/css).*
+    }
+    push / {
+        /css/app.css
+        /js/manifest.js
+        /js/vendor.js
+        /js/app.js
+    }
+}

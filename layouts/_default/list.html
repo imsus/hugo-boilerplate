@@ -1,16 +1,20 @@
-{{ define "main" }}
+{{ define "main" -}}
   <main>
-    <div class="mw8 center">
-      <div class="flex flex-wrap">
-        {{ range where .Data.Pages "Section" .Section }}
-          <div class="w-third">
-            <a class="db ma3 pa3 ba black bg-white no-underline hover-bg-dark-gray hover-white bw1 br2 h4 b--dark-gray" href="{{ .Permalink }}">
-              <h2 class="ma0 mb1 measure-narrow f4">{{ .Title }}</h2>
-              <time class="f6 code" datetime="{{ dateFormat "Monday, Jan 2, 2006" .Date }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
+    <div class="mw7 center">
+      <div class="ph3">
+        <h1 class="mb2">{{ .Title }}</h1>
+        <p class="lh-title f4 mt0 mb3 black-60 i athelas">{{ .Description }}</p>
+      </div>
+      <div class="flex flex-wrap ph2">
+        {{ range where .Pages "Params.type" "!=" "amp" }}
+          <div class="w-third-l w-50-m w-100">
+            <a href="{{ relURL .Permalink }}" class="db ma2 ph3 pv2 bg-white shadow-hover shadow-4 br2 ba b--light-gray no-underline">
+              <h2 class="mt0 mb1 f4 black-80">{{ .Title }}</h2>
+              <p class="ma0 lh-title athelas i black-60">{{ .Description }}</p>
             </a>
           </div>
         {{ end }}
       </div>
     </div>
   </main>
-{{ end }}
+{{ end -}}

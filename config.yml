@@ -1,30 +1,54 @@
-baseURL:        "https://default.dev/"
+baseURL:        "https://hugo-boilerplate.netlify.com/"
 languageCode:   "en-us"
-title:          "My New Hugo Site"
+title:          "Hugo Boilerplate"
 config:         "config.yml"
 metaDataFormat: "yaml"
 params:
-  Color: "#000000"
+  color: "#000000"
+  description: An opinionated base template for Hugo Static Sites Generator
+  author:
+    name: Imam Susanto
+    facebook: https://www.facebook.com/imsus
+outputs:
+  page:
+    - HTML
+    - AMP
+blackfriday:
+  angledQuotes: true
+  fractions: false
+  plainIDAnchors: true
+  extensions:
+    - hardLineBreak
+    - titleblock
 menu:
-  main:
-    - Name:       "Home"
-      Weight:     10
-      Identifier: "home"
-      URL:        "/"
-    - Name:       "About"
-      Weight:     20
-      Identifier: "about"
-      URL:        "/about/"
-    - Name:       "Beginner"
-      Weight:     30
-      Identifier: "beginner"
-      URL:        "/beginner/"
-    - Name:       "Advanced"
-      Weight:     40
-      Identifier: "advanced"
-      URL:        "/advanced/"
-    - Name:       "Reference"
-      Weight:     50
-      Identifier: "reference"
-      URL:        "/reference/"
+  internal:
+    - Name: "Single Page"
+      Weight: 1
+      Identifier: "single"
+      URL: "/page/sample/"
+    - Name: "List Page (Section)"
+      Weight: 2
+      Identifier: "list"
+      URL: "/page/"
+    - Name: "List Page (Taxonomy)"
+      Weight: 3
+      Identifier: "taxonomy"
+      URL: "/categories/uncategorized/"
+    - Name: "List Page (Taxonomy Terms)"
+      Weight: 4
+      Identifier: "terms"
+      URL: "/categories/"
+  external:
+    - Name: "Single AMP"
+      Weight: 1
+      Identifier: "amp"
+      URL: "/amp/page/sample/"
+    - Name: "Single JSON"
+      Weight: 2
+      Identifier: "json-single"
+      URL: "/page/sample/index.json"
+    - Name: "List JSON"
+      Weight: 3
+      Identifier: "json-list"
+      URL: "/page/index.json"
 

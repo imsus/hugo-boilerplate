@@ -1,9 +1,15 @@
-{{ define "main" }}
+{{ define "main" -}}
 <main class="flex flex-auto items-center">
   <div class="center mw8 ph3 pv4 w-100 tc">
-    <h1 class="measure-narrow f1 mt0 mb2 center">Hugo Default Boilerplate</h1>
-    <p class="f3 measure lh-copy mt0 mb4 black-60 center">An opinionated base template for Hugo Static Sites Generator</p>
-    <a class="pv3 ph4 white bg-green hover-bg-dark-green br2 f4 dib no-underline grow-large" href="/beginner/">Getting Started</a>
+    <h1 class="measure-narrow f1 mt0 mb2 center">{{ .Site.Title -}}</h1>
+    <p class="f3 measure lh-copy mt0 mb5 black-60 center">{{ .Site.Params.description -}}</p>
+    <!--<a class="pv3 ph4 white bg-green hover-bg-dark-green br2 f4 dib no-underline grow-large mb4" href="/beginner/">Getting Started</a>-->
+    <div class="mw6 center">
+      <h2 class="mb2 f3">Sample Pages:</h2>
+      <div class="flex flex-wrap justify-center">
+        {{ partial "menu.html" . -}}
+      </div>
+    </div>
   </div>
 </main>
-{{ end }}
+{{ end -}}

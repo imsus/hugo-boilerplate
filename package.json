@@ -12,7 +12,7 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "laravel-mix": "^0.10.0",
+    "laravel-mix": "^0.11.3",
     "postcss-scss": "^0.4.1",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
@@ -23,7 +23,7 @@
   "dependencies": {
     "autotrack": "^2.3.2",
     "barba.js": "^1.0.0",
-    "tachyons": "^4.7.0"
+    "tachyons": "^4.7.1"
   },
   "private": true,
   "scripts": {

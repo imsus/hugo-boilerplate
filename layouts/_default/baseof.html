@@ -1,14 +1,24 @@
 <!doctype html>
 <html>
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ .Title }}</title>
+  <title>{{ .Title -}}</title>
+  <meta name="description" content="{{ .Params.description -}}">
+  <link rel="canonical" href="{{ index .Params "source" | default .Permalink -}}">
 
-  <link rel="canonical" href="{{ .Params.source }}">
+  {{ block "serp" . -}}
+  {{ end -}}
 
-  {{ partial "cosmetics.html" . }}
+  {{ partial "cosmetics.html" . -}}
+
+  {{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel -}}" type="{{ .MediaType.Type -}}" href="{{ .Permalink | safeURL -}}">
+  {{ end -}}
+  {{ if .Params.ampfile -}}
+    <link rel="amphtml" href="{{ ref . .Params.ampfile -}}">
+  {{ end -}}
 
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
   <link rel="stylesheet" href="/css/app.css">
@@ -17,12 +27,12 @@
   <div id="barba-wrapper">
     <div class="barba-container min-vh-100 flex flex-column">
 
-      <!--{{ partial "debug.html" . }}-->
+      <!--{{ partial "debug.html" . -}}-->
       
-      {{ partial "header.html" . }}
+      {{ partial "header.html" . -}}
 
-      {{ block "main" . }}
-      {{ end }}
+      {{ block "main" . -}}
+      {{ end -}}
 
     </div>
   </div>
