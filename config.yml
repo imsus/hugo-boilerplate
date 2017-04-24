@@ -9,10 +9,7 @@ params:
   author:
     name: Imam Susanto
     facebook: https://www.facebook.com/imsus
-outputs:
-  page:
-    - HTML
-    - AMP
+    email: abc.imams@gmail.com
 blackfriday:
   angledQuotes: true
   fractions: false
@@ -20,6 +17,19 @@ blackfriday:
   extensions:
     - hardLineBreak
     - titleblock
+outputFormats:
+  instant:
+    name: "instant"
+    mediaType: "application/rss"
+    path: "instant"
+    isPlainText: false
+    isHTML: false
+    noUgly: true
+    notAlternative: false
+outputs:
+  home: 
+    - instant
+    - html
 menu:
   internal:
     - Name: "Single Page"

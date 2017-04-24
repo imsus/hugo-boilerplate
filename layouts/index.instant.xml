@@ -1,0 +1,66 @@
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Instant Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>{{ with .Site.LanguageCode }}
+    <language>{{.}}</language>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{ range where .Data.Pages "Params.type" "!=" "amp" }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <description>{{ .Description }}</description>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      <guid>{{ .UniqueID }}</guid>
+      <content:encoded>{{ "<![CDATA[" | safeHTML }}
+        <!doctype html>
+        <html lang="en" prefix="op: http://media.facebook.com/op#">
+          <head>
+            <meta charset="utf-8">
+            <link rel="canonical" href="{{ .Permalink }}">
+            <meta property="op:markup_version" content="v1.0">
+            <meta property="fb:article_style" content="default">
+          </head>
+          <body>
+            <article>
+              <header>
+                {{ if .Params.featuredimage }}
+                <figure>
+                  <img src="{{ .Params.featuredimage.url }}" />
+                  <figcaption>{{ .Params.featuredimage.caption }}</figcaption>
+                </figure>
+                {{ end }}
+                
+                <h1>{{ .Title }}</h1>
+                <h2>{{ .Description }}</h2>
+
+                <h3 class="op-kicker">{{ .Params.categories }} </h3>
+
+                <!-- The author of your article -->
+                <address>
+                  <a rel="facebook" href="{{ .Site.Params.author.facebook }}">{{ .Site.Params.author.name }}</a>
+                  {{ .Site.Params.author.bio }}
+                </address>
+
+                <!-- The published and last modified time stamps -->
+                <time class="op-published" dateTime="{{ .PublishDate }}">{{ .PublishDate.Format "d M Y" }}</time>
+                <time class="op-modified" dateTime="{{ .Lastmod }}">{{ .Lastmod.Format "d M Y" }}</time>
+              </header>
+
+              {{ .Content | html }}
+
+              <footer>
+                <aside>
+                  <p>Thank you for reading. Don't forget to share.</p>
+                </aside>
+                <small>Copyright {{ .Site.Title }}</small>
+              </footer>
+            </article>
+          </body>
+        </html>
+      {{ "]]>" | safeHTML }}</content:encoded>
+    </item>
+    {{ end }}
+  </channel>
+</rss>

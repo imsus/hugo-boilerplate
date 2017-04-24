@@ -1,0 +1,6 @@
+---
+outputs:
+  - html
+  - rss
+  - instant
+---
