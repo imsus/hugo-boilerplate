@@ -45,4 +45,8 @@ import {HideShowTransition} from './barba-transition'
     Barba.Pjax.getTransition = () => HideShowTransition
     Barba.Pjax.start()
   })
+
+  Barba.Dispatcher.on('initStateChange', function () {
+    window.ga('send', 'pageview')
+  })
 })()

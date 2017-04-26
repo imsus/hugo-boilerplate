@@ -15,7 +15,10 @@
     }
 
     # Security
-    tls self_signed
+    # tls self_signed
+    tls {
+        load /Users/imsus/.localhost-ssl
+    }
     header / {
         # Strict-Transport-Security "max-age=31536000;"
         X-XSS-Protection "1; mode=block"

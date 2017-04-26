@@ -3,8 +3,10 @@ languageCode:   "en-us"
 title:          "Hugo Boilerplate"
 config:         "config.yml"
 metaDataFormat: "yaml"
+googleAnalytics: "UA-58031574-4"
 params:
   color: "#000000"
+  amplogo: 
   description: An opinionated base template for Hugo Static Sites Generator
   author:
     name: Imam Susanto

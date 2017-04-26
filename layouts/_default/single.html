@@ -4,7 +4,7 @@
       <div class="ph3">
         <h1 class="mb2">{{ .Title -}}</h1>
         <p class="lh-title f4 mt0 mb3 black-60 i athelas">{{ .Params.description -}}</p>
-        <time class="f6" datetime="{{ dateFormat "2006-01-02" .Date -}}">{{ dateFormat "02 January 2006" .Date -}}</time> ﹒ <a class="blue f6" href="/categories/{{ .Params.categories -}}/">{{ .Params.categories | humanize -}}</a>
+        <div><time class="f6" datetime="{{ dateFormat "2006-01-02" .Date -}}">{{ dateFormat "02 January 2006" .Date -}}</time> ﹒ <a class="blue f6" href="/categories/{{ .Params.categories -}}/">{{ .Params.categories | humanize -}}</a></div>
         <div class="nested-copy-line-height nested-copy-seperator nested-headline-line-height nested-img nested-links">{{ .Content -}}</div>
       </div>
     </div>

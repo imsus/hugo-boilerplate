@@ -8,7 +8,7 @@ mix.stylus('resources/styl/app.styl', 'static/css')
    .webpackConfig({
      plugins: [
        new SWPrecacheWebpackPlugin({
-         filepath: './static/service-worker.js',
+         filepath: 'static/service-worker.js',
          staticFileGlobs: [
            'static/img/**.*',
            'static/css/**/*.css',
