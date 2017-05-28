@@ -15,15 +15,18 @@
     }
 
     # Security
-    # tls self_signed
-    tls {
-        load /Users/imsus/.localhost-ssl
-    }
+    tls off
+    # tls /Users/imsus/.localhost-ssl/cert.pem /Users/imsus/.localhost-ssl/key.pem
     header / {
         # Strict-Transport-Security "max-age=31536000;"
         X-XSS-Protection "1; mode=block"
         X-Content-Type-Options "nosniff"
         X-Frame-Options "DENY"
+        Content-Security-Policy "object-src 'none'; script-src 'nonce-QMFGvY4WP9' 'unsafe-inline' 'strict-dynamic' 'self' https: http:; base-uri 'none'; report-uri https://your-report-collector.example.com/"
+    }
+
+    header /service-worker.js {
+        -Content-Security-Policy
     }
 
     # Performance

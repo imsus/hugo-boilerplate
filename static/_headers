@@ -1,6 +1,10 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
-/*
   Link: </css/app.css>; rel=preload; as=style
+  Link: </js/manifest.js>; rel=preload; as=script
+  Link: </js/vendor.js>; rel=preload; as=script
   Link: </js/app.js>; rel=preload; as=script
+  Content-Security-Policy: object-src 'none'; script-src 'nonce-QMFGvY4WP9' 'unsafe-inline' 'strict-dynamic' 'self' https: http:; base-uri 'none'; report-uri https://your-report-collector.example.com/
+/service-worker.js
+  Content-Security-Policy: default-src *

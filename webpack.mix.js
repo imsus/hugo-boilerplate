@@ -1,20 +1,19 @@
 const { mix } = require('laravel-mix')
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const path = require('path')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
-mix.stylus('resources/styl/app.styl', 'static/css')
-   .js('resources/js/app.js', 'static/js')
+mix.js('resources/js/app.js', 'static/js')
+   .stylus('resources/stylus/app.styl', 'static/css')
    .extract(['barba.js'])
-   .sourceMaps()
    .webpackConfig({
      plugins: [
-       new SWPrecacheWebpackPlugin({
-         filepath: 'static/service-worker.js',
+       new WorkboxPlugin({
+         globDirectory: './public/',
          staticFileGlobs: [
-           'static/img/**.*',
-           'static/css/**/*.css',
-           'static/js/**/*.js'
+           'css/**/*.css',
+           'js/**/*.js'
          ],
-         stripPrefix: 'static'
+         swDest: path.join('./public/', 'service-worker.js')
        })
      ]
    })
