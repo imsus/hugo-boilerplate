@@ -6,22 +6,22 @@
   "author": "Imam Susanto <abc.imams@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "cross-env": "^5.0.0",
-    "eslint": "^3.19.0",
+    "cross-env": "^5.0.1",
+    "eslint": "^4.1.0",
     "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "laravel-mix": "^0.12.0",
-    "stylelint": "^7.10.1",
+    "laravel-mix": "0.*",
+    "stylelint": "^7.11.1",
     "stylelint-config-standard": "^16.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "workbox-webpack-plugin": "^1.0.0"
+    "workbox-webpack-plugin": "^1.0.1"
   },
   "dependencies": {
-    "autotrack": "^2.3.3",
+    "autotrack": "^2.4.1",
     "barba.js": "^1.0.0",
     "tachyons": "^4.7.4"
   },

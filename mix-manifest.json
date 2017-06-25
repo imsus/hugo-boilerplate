@@ -1,7 +1,6 @@
 {
-  "/mix.js": "/mix.js",
-  "/static/css/app.css": "/static/css/app.css",
-  "/static/js/app.js": "/static/js/app.js",
-  "/static/js/vendor.js": "/static/js/vendor.js",
-  "/static/js/manifest.js": "/static/js/manifest.js"
+  "/public/js/app.js": "/public/js/app.js",
+  "/public/css/app.css": "/public/css/app.css",
+  "/public/js/vendor.js": "/public/js/vendor.js",
+  "/public/js/manifest.js": "/public/js/manifest.js"
 }
